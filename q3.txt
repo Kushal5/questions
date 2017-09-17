@@ -1,0 +1,4 @@
+select id,Name ,sum([PackWeight]) 
+as sumPackweight, sum([PickWeight]) 
+as sumPickWeight
+from [dbo].[Items] group by Id, Name

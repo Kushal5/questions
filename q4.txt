@@ -1,0 +1,6 @@
+select Id,Name ,sum([PackWeight]) + sum([PickWeight]) as sumPickWeight ,
+CASE  
+when (sum([PackWeight]) + sum([PickWeight])) between 1 and 10 Then 'Average'
+when (sum([PackWeight]) + sum([PickWeight])) > 20 Then 'Above Average'
+END
+from [dbo].[Items] group by Id, Name
